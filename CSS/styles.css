@@ -1,0 +1,85 @@
+:root {
+    --color-fondo-principal: #72d2c6; 
+    --color-blanco: #ffffff;
+    --color-fondo-menu-activo: #e5e9ff; 
+    --color-primario: #6b82fa; 
+    --color-texto-oscuro: #333333;
+    --color-texto-gris: #6c757d; 
+    --color-borde-suave: #f0f0f0;
+    --color-boton-pendiente: #dae26a;
+    --color-boton-completada: #1bec3e;
+}
+
+body {
+    background-color: var(--color-fondo-principal);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+
+.caja-blanca {
+    background-color: var(--color-blanco);
+    border-radius: 15px; 
+    padding: 20px; 
+    font-size: 1.25rem;
+}
+
+
+
+/* La tarjeta blanca de cada tarea */
+.tarjeta-tarea-limpia {
+    background-color: var(--color-blanco);
+    border: 1px solid var(--color-borde-suave); 
+    border-radius: 12px;
+    padding: 18px;
+    height: 100%; 
+}
+
+
+
+/* La etiqueta de estado de las tareas */
+.etiqueta-estado {
+    display: inline-block;
+    background-color: var(--color-boton-pendiente);
+    color: var(--color-texto-oscuro);
+    padding: 4px 12px;
+    border-radius: 20px; 
+    font-size: 0.75rem;
+    font-weight: 600;
+
+}
+
+.etiqueta-estado-completada {
+    display: inline-block;
+    background-color: var(--color-boton-completada);
+    color: var(--color-texto-oscuro);
+    padding: 4px 12px;
+    border-radius: 20px; 
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* Textos */
+.enlace-nueva-tarea {
+    color: var(--color-primario);
+    font-weight: 500;
+}
+
+.texto-fecha {
+    font-size: 0.85rem;
+    color: var(--color-texto-gris); 
+}
+
+/* Seccion de añadir tareas */
+
+.etiqueta-formulario {
+    font-size: 1rem;
+    color: var(--color-texto-gris);
+}
+
+.btn-morado {
+    background-color: var(--color-primario);
+    color: white;
+   
+}
