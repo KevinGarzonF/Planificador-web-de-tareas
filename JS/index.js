@@ -1,6 +1,6 @@
-// ==========================================
-// 1. CONSTANTES Y SELECCIÓN DE ELEMENTOS
-// ==========================================
+
+// CONSTANTES Y SELECCION DE ELEMENTOS
+
 const formulario = document.querySelector('#formulario-tarea');
 const inputNombreTarea = document.querySelector('#campoTitulo'); 
 const inputDescripcionTarea = document.querySelector('#campoDescripcion'); 
@@ -9,15 +9,15 @@ const contenedorTareas = document.querySelector('#contenedorTareas');
 const alertaError = document.querySelector('#alertaError'); 
 const moldeTarea = document.querySelector('#moldeTarea'); 
 
-// ==========================================
-// 2. INSTANCIA DE TASKMANAGER (Parte 1)
-// ==========================================
+
+// TASKMANAGER 
+
 const taskManager = new TaskManager();
 console.log(taskManager.tasks); 
 
-// ==========================================
-// 3. FUNCIONES
-// ==========================================
+
+// FUNCIONES
+
 function validarCampoFormulario(dato) {
     return dato.trim() !== ''; 
 }
@@ -32,9 +32,9 @@ function ocultarError() {
     alertaError.textContent = '';
 }
 
-// ==========================================
-// 4. EVENTO DEL FORMULARIO (Tareas Nuevas)
-// ==========================================
+
+// FORMULARIO 
+
 formulario.addEventListener('submit', function(evento) {
     
     evento.preventDefault();
@@ -54,7 +54,12 @@ formulario.addEventListener('submit', function(evento) {
 
     ocultarError();
 
-    // Clonamos el molde
+    //seccion por hacer
+
+    taskManager.addTask(nombre, descripcion, fecha, 'PORHACER');
+    console.log(taskManager.tasks);
+
+    
     const clonTarea = moldeTarea.content.cloneNode(true);
     
     clonTarea.querySelector('h6').textContent = nombre;
@@ -62,7 +67,7 @@ formulario.addEventListener('submit', function(evento) {
     
     const etiquetaEstado = clonTarea.querySelector('.etiqueta-estado');
     
-    // Lógica para marcar/desmarcar la tarea 
+
     etiquetaEstado.addEventListener('click', function() {
         if (etiquetaEstado.textContent === 'Estado' || etiquetaEstado.textContent === 'Pendiente') {
             etiquetaEstado.textContent = 'Hecha';
@@ -75,7 +80,7 @@ formulario.addEventListener('submit', function(evento) {
         }
     });
 
-    // Insertamos la tarjeta y limpiamos el formulario
+
     contenedorTareas.prepend(clonTarea);
     formulario.reset();
 });
